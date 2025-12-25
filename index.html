@@ -3,97 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Quaid-e-Azam Celebration</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin:0;
-  overflow:hidden;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align:center;
-  color:#0b3d2e;
-  background: linear-gradient(45deg,#0b6b3a,#87cefa,#ffd700,#ffffff,#ff69b4);
-  background-size: 800% 800%;
-  animation: gradientBG 40s ease infinite;
-}
-
-@keyframes gradientBG{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-.card {
-  position: relative;
-  z-index:10;
-  margin-top:6vh;
-  background: rgba(255,255,255,0.95);
-  display:inline-block;
-  padding:35px;
-  border-radius:20px;
-  box-shadow:0 10px 35px rgba(0,0,0,0.35);
-  max-width:95%;
-  transition: transform 0.3s ease;
-}
-
-.card:hover { transform: scale(1.03); }
-
-h1 {
-  margin:6px 0;
-  font-size:36px;
-  background: linear-gradient(to right,#ff0000,#ffff00,#00ff00,#00ffff,#ff00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: hue 6s linear infinite;
-}
-
-@keyframes hue { 0%{filter: hue-rotate(0deg);} 100%{filter: hue-rotate(360deg);} }
-
+/* Body + background */
+body {margin:0; overflow:hidden; font-family:Arial,sans-serif; text-align:center;
+color:#0b3d2e; background: linear-gradient(45deg,#0b6b3a,#87cefa,#ffd700,#ffffff,#ff69b4);
+background-size:800% 800%; animation:gradientBG 40s ease infinite;}
+@keyframes gradientBG{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.card {position:relative; z-index:10; margin:6vh auto; background:rgba(255,255,255,0.95); display:inline-block; padding:35px; border-radius:20px; box-shadow:0 10px 35px rgba(0,0,0,0.35); max-width:95%; transition: transform 0.3s ease;}
+.card:hover {transform:scale(1.03);}
+h1 {margin:6px 0; font-size:36px; background:linear-gradient(to right,#ff0000,#ffff00,#00ff00,#00ffff,#ff00ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:hue 6s linear infinite;}
+@keyframes hue {0%{filter:hue-rotate(0deg);}100%{filter:hue-rotate(360deg);}}
 h2{margin:6px 0;font-size:22px;}
 p{margin:6px 0;font-weight:bold;}
-
-input {
-  padding:10px;
-  border-radius:8px;
-  border:1px solid #ccc;
-  width:70%;
-  margin-top:10px;
-  font-size:14px;
-}
-
-button {
-  margin:6px;
-  padding:10px 16px;
-  border:none;
-  border-radius:12px;
-  background:#0b6b3a;
-  color:white;
-  font-size:14px;
-  cursor:pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-button:hover { background: #0d8b4e; transform: scale(1.05); }
-
-.audioBtn{ margin-top:10px; padding:8px 12px; font-size:13px; }
-
-.flower, .firework, .decor{ position:fixed; pointer-events:none; }
-
-.flower { top:-50px; font-size:22px; animation:fall linear infinite; }
-.decor { font-size:24px; animation:floatUp linear infinite; }
-
-@keyframes fall { from{transform:translateY(0);} to{transform:translateY(110vh);} }
-@keyframes floatUp { from{transform:translateY(100vh);} to{transform:translateY(-10vh);} }
-
-.firework {
-  width:6px; height:6px; border-radius:50%;
-  position:fixed; pointer-events:none;
-  animation:explode 1.2s ease-out forwards;
-}
-
-@keyframes explode { from{transform:scale(1);opacity:1;} to{transform:scale(4);opacity:0;} }
-
-.footer { margin-top:16px; font-size:14px; color:#0b3d2e; opacity:0.9; }
+input {padding:10px;border-radius:8px;border:1px solid #ccc;width:70%;margin-top:10px;font-size:14px;}
+button {margin:6px;padding:10px 16px;border:none;border-radius:12px;background:#0b6b3a;color:white;font-size:14px;cursor:pointer;transition:background 0.3s ease, transform 0.2s ease;}
+button:hover {background:#0d8b4e;transform:scale(1.05);}
+.audioBtn{margin-top:10px;padding:8px 12px;font-size:13px;}
+.flower,.firework,.decor{position:fixed;pointer-events:none;}
+.flower {top:-50px;font-size:22px; animation:fall linear infinite;}
+.decor {font-size:24px; animation:floatUp linear infinite;}
+@keyframes fall {from{transform:translateY(0);}to{transform:translateY(110vh);}}
+@keyframes floatUp {from{transform:translateY(100vh);}to{transform:translateY(-10vh);}}
+.firework {width:6px;height:6px;border-radius:50%;position:fixed;pointer-events:none;animation:explode 1.2s ease-out forwards;}
+@keyframes explode {from{transform:scale(1);opacity:1;}to{transform:scale(4);opacity:0;}}
+.footer {margin-top:16px;font-size:14px;color:#0b3d2e;opacity:0.9;}
+.ad-placeholder {margin:20px auto; width:100%; max-width:336px; height:280px; background:#ddd; display:flex; justify-content:center; align-items:center; color:#555; border-radius:12px;}
 </style>
 </head>
 
@@ -103,6 +39,9 @@ button:hover { background: #0d8b4e; transform: scale(1.05); }
   <h1>Happy Quaid-e-Azam Day</h1>
   <h2>قائدِاعظم محمد علی جناحؒ</h2>
   <p>Born at 25 December</p>
+
+  <p id="from">Enter your name</p>
+
   <p style="margin:12px 0;font-size:16px;line-height:1.5;">
     Quaid-e-Azam Muhammad Ali Jinnah was the founder of Pakistan and one of the greatest leaders in history, inspiring millions through his vision, courage, and dedication.
   </p>
@@ -114,7 +53,15 @@ button:hover { background: #0d8b4e; transform: scale(1.05); }
   <br>
   <button class="audioBtn" onclick="toggleAudio()">🔊 Play / Mute Music</button>
 
-  <p class="footer">Developed by <b>Tahir Akbar</b></p>
+  <!-- GOOGLE ADSENSE PLACEHOLDER -->
+  <!-- Replace this div with your AdSense code -->
+  <div class="ad-placeholder">
+    Your Google AdSense / Affiliate Ad Here
+  </div>
+
+  <p class="footer">
+    Developed by <b>Tahir Akbar</b>
+  </p>
 </div>
 
 <audio id="bgMusic" loop autoplay>
@@ -122,18 +69,24 @@ button:hover { background: #0d8b4e; transform: scale(1.05); }
 </audio>
 
 <script>
-// AUTOMATIC MUSIC PLAY
-const music = document.getElementById("bgMusic");
-music.volume = 0.5;
-window.addEventListener('load',()=>{ music.play().catch(()=>{}); }); // Autoplay try for all browsers
-
-function toggleAudio(){ if(music.paused){music.play();} else{music.pause();} }
+// AUTOPLAY enhancement
+window.addEventListener('load', function(){
+  const music = document.getElementById("bgMusic");
+  const playPromise = music.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      console.log("Autoplay blocked, user must interact");
+    });
+  }
+});
 
 // NAME DISPLAY
 const params = new URLSearchParams(window.location.search);
 const name = params.get("n");
 const fromEl = document.getElementById("from");
-if(name){ fromEl.innerText = "From: " + name.replace(/-/g," "); }
+if(name){
+  fromEl.innerText = "From: " + name.replace(/-/g," ");
+}
 
 // INPUT event
 document.getElementById("nameInput").addEventListener("input", function(){
@@ -145,7 +98,8 @@ document.getElementById("nameInput").addEventListener("input", function(){
 function makeLink(){
   const n = document.getElementById("nameInput").value.trim();
   if(!n) return;
-  const link = location.origin + location.pathname + "?n=" + encodeURIComponent(n.replace(/\s+/g,"-"));
+  const link = location.origin + location.pathname +
+    "?n=" + encodeURIComponent(n.replace(/\s+/g,"-"));
   alert("Share this link:\n" + link);
 }
 
@@ -157,39 +111,50 @@ function shareWhatsApp(){
 }
 
 // FLOWERS
-const flowers=["🌸","🌼","🌺","🌷","💮"];
+const flowers = ["🌸","🌼","🌺","🌷","💮"];
 for(let i=0;i<50;i++){
-  let f=document.createElement("div"); f.className="flower";
-  f.innerText=flowers[Math.floor(Math.random()*flowers.length)];
-  f.style.left=Math.random()*100 + "vw";
-  f.style.animationDuration=(5 + Math.random()*5) + "s";
-  f.style.fontSize=(18 + Math.random()*14) + "px";
+  let f = document.createElement("div");
+  f.className="flower";
+  f.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+  f.style.left = Math.random()*100 + "vw";
+  f.style.animationDuration = (5 + Math.random()*5) + "s";
+  f.style.fontSize = (18 + Math.random()*14) + "px";
   document.body.appendChild(f);
 }
 
 // DECORATIVE ELEMENTS
-const decors=["💖","✨","🌟","❤️"];
+const decors = ["💖","✨","🌟","❤️"];
 for(let i=0;i<30;i++){
-  let d=document.createElement("div"); d.className="decor";
-  d.innerText=decors[Math.floor(Math.random()*decors.length)];
-  d.style.left=Math.random()*100 + "vw";
-  d.style.animationDuration=(8 + Math.random()*6) + "s";
+  let d = document.createElement("div");
+  d.className="decor";
+  d.innerText = decors[Math.floor(Math.random()*decors.length)];
+  d.style.left = Math.random()*100 + "vw";
+  d.style.animationDuration = (8 + Math.random()*6) + "s";
   document.body.appendChild(d);
 }
 
 // FIREWORKS
 function createFirework(){
-  const count=Math.floor(Math.random()*15)+8;
+  const count = Math.floor(Math.random()*15)+8;
   for(let i=0;i<count;i++){
-    let fw=document.createElement("div"); fw.className="firework";
-    fw.style.left=Math.random()*100 + "vw";
-    fw.style.top=Math.random()*50 + "vh";
-    fw.style.background=["red","yellow","white","green","orange","purple","#ff69b4"][Math.floor(Math.random()*7)];
+    let fw = document.createElement("div");
+    fw.className="firework";
+    fw.style.left = Math.random()*100 + "vw";
+    fw.style.top = Math.random()*50 + "vh";
+    fw.style.background = ["red","yellow","white","green","orange","purple","#ff69b4"][Math.floor(Math.random()*7)];
     document.body.appendChild(fw);
     setTimeout(()=>fw.remove(),1200);
   }
 }
 setInterval(createFirework,400);
+
+// MUSIC TOGGLE
+const music = document.getElementById("bgMusic");
+music.volume = 0.5;
+function toggleAudio(){
+  if(music.paused){music.play();}
+  else{music.pause();}
+}
 </script>
 
 </body>
