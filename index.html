@@ -6,43 +6,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* BODY + BACKGROUND */
 body {
-  margin: 0;
-  overflow: hidden;
+  margin:0;
+  overflow:hidden;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  background: linear-gradient(45deg, #0b6b3a, #87cefa, #ffd700, #ffffff);
-  background-size: 600% 600%;
-  animation: gradientBG 30s ease infinite;
+  text-align:center;
+  color:#0b3d2e;
+  background: linear-gradient(45deg,#0b6b3a,#87cefa,#ffd700,#ffffff,#ff69b4);
+  background-size: 800% 800%;
+  animation: gradientBG 40s ease infinite;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
-/* CARD STYLE */
 .card {
   position: relative;
-  z-index: 10;
-  margin-top: 6vh;
+  z-index:10;
+  margin-top:6vh;
   background: rgba(255,255,255,0.95);
-  display: inline-block;
-  padding: 35px;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-  max-width: 90%;
+  display:inline-block;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.35);
+  max-width:95%;
   transition: transform 0.3s ease;
 }
 
-.card:hover { transform: scale(1.04); }
+.card:hover {
+  transform: scale(1.03);
+}
 
-/* HEADING */
 h1 {
-  margin: 6px 0;
-  font-size: 34px;
+  margin:6px 0;
+  font-size:36px;
   background: linear-gradient(to right,#ff0000,#ffff00,#00ff00,#00ffff,#ff00ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,31 +50,31 @@ h1 {
 }
 
 @keyframes hue {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+  0%{filter: hue-rotate(0deg);}
+  100%{filter: hue-rotate(360deg);}
 }
 
-h2 { margin: 6px 0; font-size: 22px; }
-p { margin: 6px 0; font-weight: bold; }
+h2{margin:6px 0;font-size:22px;}
+p{margin:6px 0;font-weight:bold;}
 
-/* INPUT + BUTTON */
 input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 70%;
-  margin-top: 10px;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  width:70%;
+  margin-top:10px;
+  font-size:14px;
 }
 
 button {
-  margin: 6px;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 10px;
-  background: #0b6b3a;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
+  margin:6px;
+  padding:10px 16px;
+  border:none;
+  border-radius:12px;
+  background:#0b6b3a;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
@@ -83,45 +83,57 @@ button:hover {
   transform: scale(1.05);
 }
 
-.audioBtn { margin-top: 12px; padding: 6px 10px; font-size: 13px; }
+.audioBtn{
+  margin-top:10px;
+  padding:8px 12px;
+  font-size:13px;
+}
 
-/* FLOWERS + FIREWORKS */
-.flower, .firework, .star {
-  position: fixed;
-  pointer-events: none;
+.flower, .firework, .decor{
+  position:fixed;
+  pointer-events:none;
 }
 
 .flower {
-  top: -50px;
-  font-size: 22px;
-  animation: fall linear infinite;
+  top:-50px;
+  font-size:22px;
+  animation:fall linear infinite;
+}
+
+.decor {
+  font-size:24px;
+  animation:floatUp linear infinite;
 }
 
 @keyframes fall {
-  from { transform: translateY(0); }
-  to { transform: translateY(110vh); }
+  from{transform:translateY(0);}
+  to{transform:translateY(110vh);}
+}
+
+@keyframes floatUp {
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
 }
 
 .firework {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  animation: explode 1.2s ease-out forwards;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  animation:explode 1.2s ease-out forwards;
 }
 
 @keyframes explode {
-  from { transform: scale(1); opacity:1; }
-  to { transform: scale(4); opacity:0; }
+  from{transform:scale(1);opacity:1;}
+  to{transform:scale(4);opacity:0;}
 }
 
-/* FOOTER */
 .footer {
-  margin-top: 18px;
-  font-size: 14px;
-  color: #0b3d2e;
-  opacity: 0.9;
+  margin-top:16px;
+  font-size:14px;
+  color:#0b3d2e;
+  opacity:0.9;
 }
 </style>
 </head>
@@ -133,9 +145,8 @@ button:hover {
   <h2>قائدِاعظم محمد علی جناحؒ</h2>
   <p>Born at 25 December</p>
 
-
   <p style="margin:12px 0;font-size:16px;line-height:1.5;">
-    Quaid-e-Azam Muhammad Ali Jinnah was the founder of Pakistan and one of the greatest leaders in history, who inspired millions through his vision, courage, and dedication.
+    Quaid-e-Azam Muhammad Ali Jinnah was the founder of Pakistan and one of the greatest leaders in history, inspiring millions through his vision, courage, and dedication.
   </p>
 
   <input id="nameInput" placeholder="Enter your name">
@@ -145,28 +156,34 @@ button:hover {
   <br>
   <button class="audioBtn" onclick="toggleAudio()">🔊 Play / Mute Music</button>
 
-  <p class="footer">Developed by <b>Tahir Akbar</b></p>
+  <p class="footer">
+    Developed by <b>Tahir Akbar</b>
+  </p>
 </div>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop autoplay>
   <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
 </audio>
 
 <script>
-// NAME FROM URL
+// NAME DISPLAY
 const params = new URLSearchParams(window.location.search);
 const name = params.get("n");
+const fromEl = document.getElementById("from");
 if(name){
-  document.getElementById("from").innerText =
-    "From: " + name.replace(/-/g," ");
+  fromEl.innerText = "From: " + name.replace(/-/g," ");
 }
+
+// INPUT event for live display
+document.getElementById("nameInput").addEventListener("input", function(){
+  const val = this.value.trim();
+  fromEl.innerText = val ? "From: " + val : "Enter your name";
+});
 
 // GENERATE LINK
 function makeLink(){
   const n = document.getElementById("nameInput").value.trim();
   if(!n) return;
-  document.getElementById("from").innerText = "From: " + n;
   const link = location.origin + location.pathname +
     "?n=" + encodeURIComponent(n.replace(/\s+/g,"-"));
   alert("Share this link:\n" + link);
@@ -174,25 +191,37 @@ function makeLink(){
 
 // WHATSAPP SHARE
 function shareWhatsApp(){
-  const text = "Happy Quaid-e-Azam Day 🇵🇰\n" + location.href;
+  const name = document.getElementById("nameInput").value.trim() || "Tahir";
+  const text = `Happy Quaid-e-Azam Day 🇵🇰\nFrom: ${name}\n` + location.href;
   window.open("https://wa.me/?text=" + encodeURIComponent(text));
 }
 
 // FLOWERS
-const flowers = ["🌸","🌼","🌺","🌷","💮","🌹"];
+const flowers = ["🌸","🌼","🌺","🌷","💮"];
 for(let i=0;i<50;i++){
   let f = document.createElement("div");
   f.className="flower";
   f.innerText = flowers[Math.floor(Math.random()*flowers.length)];
   f.style.left = Math.random()*100 + "vw";
-  f.style.animationDuration = (5 + Math.random()*6) + "s";
-  f.style.fontSize = (18 + Math.random()*12) + "px";
+  f.style.animationDuration = (5 + Math.random()*5) + "s";
+  f.style.fontSize = (18 + Math.random()*14) + "px";
   document.body.appendChild(f);
 }
 
-// ADVANCED FIREWORKS
+// DECORATIVE ELEMENTS (hearts, stars)
+const decors = ["💖","✨","🌟","❤️"];
+for(let i=0;i<30;i++){
+  let d = document.createElement("div");
+  d.className="decor";
+  d.innerText = decors[Math.floor(Math.random()*decors.length)];
+  d.style.left = Math.random()*100 + "vw";
+  d.style.animationDuration = (8 + Math.random()*6) + "s";
+  document.body.appendChild(d);
+}
+
+// FIREWORKS
 function createFirework(){
-  const count = Math.floor(Math.random()*15)+10;
+  const count = Math.floor(Math.random()*15)+8;
   for(let i=0;i<count;i++){
     let fw = document.createElement("div");
     fw.className="firework";
@@ -203,13 +232,14 @@ function createFirework(){
     setTimeout(()=>fw.remove(),1200);
   }
 }
-setInterval(createFirework,350);
+setInterval(createFirework,400);
 
 // MUSIC TOGGLE
 const music = document.getElementById("bgMusic");
+music.volume = 0.5; // initial volume
 function toggleAudio(){
-  if(music.paused){ music.play(); }
-  else{ music.pause(); }
+  if(music.paused){music.play();}
+  else{music.pause();}
 }
 </script>
 
