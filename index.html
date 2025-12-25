@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quaid-e-Azam Day Celebration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* BODY + BACKGROUND */
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #0b3d2e;
+  background: linear-gradient(45deg, #0b6b3a, #87cefa, #ffd700, #ffffff);
+  background-size: 600% 600%;
+  animation: gradientBG 30s ease infinite;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* CARD STYLE */
+.card {
+  position: relative;
+  z-index: 10;
+  margin-top: 8vh;
+  background: rgba(255,255,255,0.9);
+  display:inline-block;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* HEADING */
+h1 {
+  margin: 6px 0;
+  font-size: 32px;
+  background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 6s linear infinite;
+}
+
+@keyframes hue {
+  0%{filter: hue-rotate(0deg);}
+  100%{filter: hue-rotate(360deg);}
+}
+
+h2{margin:6px 0;font-size:20px;}
+p{margin:6px 0;font-weight:bold;}
+
+/* INPUT + BUTTONS */
+input {
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  width:70%;
+  margin-top:8px;
+}
+
+button {
+  margin:6px;
+  padding:10px 14px;
+  border:none;
+  border-radius:10px;
+  background:#0b6b3a;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #0d8b4e;
+  transform: scale(1.05);
+}
+
+.audioBtn{
+  margin-top:10px;
+  padding:6px 10px;
+  font-size:13px;
+}
+
+/* FLOWERS + FIREWORKS */
+.flower, .firework{
+  position:fixed;
+  pointer-events:none;
+}
+
+.flower {
+  top:-50px;
+  font-size:22px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall {
+  from{transform:translateY(0);}
+  to{transform:translateY(110vh);}
+}
+
+.firework {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  animation:explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  from{transform:scale(1);opacity:1;}
+  to{transform:scale(4);opacity:0;}
+}
+
+/* FOOTER */
+.footer {
+  margin-top:16px;
+  font-size:14px;
+  color:#0b3d2e;
+  opacity:0.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Happy Quaid-e-Azam Day</h1>
+  <h2>قائدِاعظم محمد علی جناحؒ</h2>
+  <p>Born at 25 December</p>
+
+  <p id="from"></p>
+
+  <p style="margin:12px 0;font-size:16px;line-height:1.5;">
+    Quaid-e-Azam Muhammad Ali Jinnah was the founder of Pakistan and one of the greatest leaders in history, who inspired millions through his vision, courage, and dedication.
+  </p>
+
+  <input id="nameInput" placeholder="Apna naam likho">
+  <br>
+  <button onclick="makeLink()">Share Link</button>
+  <button onclick="shareWhatsApp()">WhatsApp</button>
+  <br>
+  <button class="audioBtn" onclick="toggleAudio()">🔊 Play / Mute Music</button>
+
+  <p class="footer">
+    Developed by <b>Tahir Akbar</b>
+  </p>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+// NAME FROM URL
+const params = new URLSearchParams(window.location.search);
+const name = params.get("n");
+if(name){
+  document.getElementById("from").innerText =
+    "From: " + name.replace(/-/g," ");
+}
+
+// GENERATE LINK
+function makeLink(){
+  const n = document.getElementById("nameInput").value.trim();
+  if(!n) return;
+  const link = location.origin + location.pathname +
+    "?n=" + encodeURIComponent(n.replace(/\s+/g,"-"));
+  alert("Share this link:\n" + link);
+}
+
+// WHATSAPP SHARE
+function shareWhatsApp(){
+  const text = "Happy Quaid-e-Azam Day 🇵🇰\n" + location.href;
+  window.open("https://wa.me/?text=" + encodeURIComponent(text));
+}
+
+// FLOWERS
+const flowers = ["🌸","🌼","🌺","🌷","💮"];
+for(let i=0;i<40;i++){
+  let f = document.createElement("div");
+  f.className="flower";
+  f.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+  f.style.left = Math.random()*100 + "vw";
+  f.style.animationDuration = (5 + Math.random()*5) + "s";
+  f.style.fontSize = (18 + Math.random()*10) + "px";
+  document.body.appendChild(f);
+}
+
+// ADVANCED FIREWORKS
+function createFirework(){
+  const count = Math.floor(Math.random()*12)+8;
+  for(let i=0;i<count;i++){
+    let fw = document.createElement("div");
+    fw.className="firework";
+    fw.style.left = Math.random()*100 + "vw";
+    fw.style.top = Math.random()*50 + "vh";
+    fw.style.background = ["red","yellow","white","green","orange","purple","#ff69b4"][Math.floor(Math.random()*7)];
+    document.body.appendChild(fw);
+    setTimeout(()=>fw.remove(),1200);
+  }
+}
+setInterval(createFirework,400);
+
+// MUSIC TOGGLE
+const music = document.getElementById("bgMusic");
+function toggleAudio(){
+  if(music.paused){music.play();}
+  else{music.pause();}
+}
+</script>
+
+</body>
+</html>
