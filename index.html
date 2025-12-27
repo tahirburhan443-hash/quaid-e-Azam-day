@@ -2,159 +2,211 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Quaid-e-Azam Celebration</title>
-<meta name="google-site-verification" content="bmmdtpUyoAlyzBElKmvgZkGsxl-DgHBmKsQCQKy1wGI" />
+<title>Quaid-e-Azam Day | Tribute</title>
+
+<!-- SEO Meta -->
+<meta name="description" content="Quaid-e-Azam Muhammad Ali Jinnah Tribute Page. Founder of Pakistan. 25 December Quaid Day. Developed by Tahir Akbar.">
+<meta name="keywords" content="Quaid e Azam, Founder of Pakistan, Quaid Day, 25 December">
+<meta name="author" content="Tahir Akbar">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <style>
-/* Body + background */
-body {margin:0; overflow:hidden; font-family:Arial,sans-serif; text-align:center;
-color:#0b3d2e; background: linear-gradient(45deg,#0b6b3a,#87cefa,#ffd700,#ffffff,#ff69b4);
-background-size:800% 800%; animation:gradientBG 40s ease infinite;}
-@keyframes gradientBG{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-.card {position:relative; z-index:10; margin:6vh auto; background:rgba(255,255,255,0.95); display:inline-block; padding:35px; border-radius:20px; box-shadow:0 10px 35px rgba(0,0,0,0.35); max-width:95%; transition: transform 0.3s ease;}
-.card:hover {transform:scale(1.03);}
-h1 {margin:6px 0; font-size:36px; background:linear-gradient(to right,#ff0000,#ffff00,#00ff00,#00ffff,#ff00ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:hue 6s linear infinite;}
-@keyframes hue {0%{filter:hue-rotate(0deg);}100%{filter:hue-rotate(360deg);}}
-h2{margin:6px 0;font-size:22px;}
-p{margin:6px 0;font-weight:bold;}
-input {padding:10px;border-radius:8px;border:1px solid #ccc;width:70%;margin-top:10px;font-size:14px;}
-button {margin:6px;padding:10px 16px;border:none;border-radius:12px;background:#0b6b3a;color:white;font-size:14px;cursor:pointer;transition:background 0.3s ease, transform 0.2s ease;}
-button:hover {background:#0d8b4e;transform:scale(1.05);}
-.audioBtn{margin-top:10px;padding:8px 12px;font-size:13px;}
-.flower,.firework,.decor{position:fixed;pointer-events:none;}
-.flower {top:-50px;font-size:22px; animation:fall linear infinite;}
-.decor {font-size:24px; animation:floatUp linear infinite;}
-@keyframes fall {from{transform:translateY(0);}to{transform:translateY(110vh);}}
-@keyframes floatUp {from{transform:translateY(100vh);}to{transform:translateY(-10vh);}}
-.firework {width:6px;height:6px;border-radius:50%;position:fixed;pointer-events:none;animation:explode 1.2s ease-out forwards;}
-@keyframes explode {from{transform:scale(1);opacity:1;}to{transform:scale(4);opacity:0;}}
-.footer {margin-top:16px;font-size:14px;color:#0b3d2e;opacity:0.9;}
-.ad-placeholder {margin:20px auto; width:100%; max-width:336px; height:280px; background:#ddd; display:flex; justify-content:center; align-items:center; color:#555; border-radius:12px;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background: linear-gradient(135deg,#001f3f,#00416a,#001219);
+color:#fff;
+min-height:100vh;
+overflow-x:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* Flag Animation */
+.flag{
+width:260px;
+height:160px;
+margin:20px auto;
+background: linear-gradient(to right,#01411C 70%,#fff 30%);
+position:relative;
+animation:wave 3s infinite ease-in-out;
+border-radius:6px;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+.flag:after{
+content:"☪";
+color:#fff;
+font-size:60px;
+position:absolute;
+top:40px;
+left:80px;
+}
+@keyframes wave{
+0%{transform:skewY(0deg);}
+50%{transform:skewY(3deg);}
+100%{transform:skewY(0deg);}
+}
+
+/* Fireworks */
+.firework{
+position:absolute;
+width:6px;
+height:6px;
+background:#ffd700;
+border-radius:50%;
+animation:fire 2.5s infinite;
+}
+@keyframes fire{
+0%{transform:scale(0);opacity:1;}
+100%{transform:scale(20);opacity:0;}
+}
+
+.container{
+max-width:900px;
+margin:60px auto;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(14px);
+border-radius:25px;
+padding:45px;
+box-shadow:0 35px 80px rgba(0,0,0,0.7);
+animation:fade 1.4s ease;
+text-align:center;
+}
+@keyframes fade{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+h1{
+font-size:3.4rem;
+color:#ffd700;
+margin-bottom:10px;
+}
+
+h2{
+font-size:1.7rem;
+color:#00ffcc;
+margin-bottom:25px;
+}
+
+.divider{
+width:140px;
+height:4px;
+background:#00ffcc;
+margin:30px auto;
+border-radius:20px;
+}
+
+p{
+font-size:1.07rem;
+line-height:2;
+margin-bottom:20px;
+color:#f1f1f1;
+}
+
+.highlight{color:#ffd700;font-weight:600;}
+
+.music-btn{
+display:inline-block;
+margin:25px auto;
+padding:12px 28px;
+background:#00ffcc;
+color:#000;
+border:none;
+border-radius:30px;
+font-size:1rem;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+.music-btn:hover{
+background:#ffd700;
+}
+
+footer{
+margin-top:35px;
+padding-top:15px;
+border-top:1px solid rgba(255,255,255,0.2);
+font-size:0.95rem;
+color:#ccc;
+}
+footer span{color:#00ffcc;font-weight:600;}
 </style>
 </head>
 
-<body>
+<body onclick="startMusic()">
 
-<div class="card">
-  <h1>Happy Quaid-e-Azam Day</h1>
-  <h2>قائدِاعظم محمد علی جناحؒ</h2>
-  <p>Born at 25 December</p>
-
-  <p id="from">Enter your name</p>
-
-  <p style="margin:12px 0;font-size:16px;line-height:1.5;">
-    Quaid-e-Azam Muhammad Ali Jinnah was the founder of Pakistan and one of the greatest leaders in history, inspiring millions through his vision, courage, and dedication.
-  </p>
-
-  <input id="nameInput" placeholder="Enter your name">
-  <br>
-  <button onclick="makeLink()">Share Link</button>
-  <button onclick="shareWhatsApp()">WhatsApp</button>
-  <br>
-  <button class="audioBtn" onclick="toggleAudio()">🔊 Play / Mute Music</button>
-
-  <!-- GOOGLE ADSENSE PLACEHOLDER -->
-  <!-- Replace this div with your AdSense code -->
-  <div class="ad-placeholder">
-    Your Google AdSense / Affiliate Ad Here
-  </div>
-
-  <p class="footer">
-    Developed by <b>Tahir Akbar</b>
-  </p>
-</div>
-
-<audio id="bgMusic" loop autoplay>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-// AUTOPLAY enhancement
-window.addEventListener('load', function(){
-  const music = document.getElementById("bgMusic");
-  const playPromise = music.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(error => {
-      console.log("Autoplay blocked, user must interact");
-    });
-  }
-});
-
-// NAME DISPLAY
-const params = new URLSearchParams(window.location.search);
-const name = params.get("n");
-const fromEl = document.getElementById("from");
-if(name){
-  fromEl.innerText = "From: " + name.replace(/-/g," ");
+/* Fireworks */
+for(let i=0;i<25;i++){
+let f=document.createElement("div");
+f.className="firework";
+f.style.left=Math.random()*100+"vw";
+f.style.top=Math.random()*100+"vh";
+f.style.animationDelay=Math.random()*3+"s";
+document.body.appendChild(f);
 }
 
-// INPUT event
-document.getElementById("nameInput").addEventListener("input", function(){
-  const val = this.value.trim();
-  fromEl.innerText = val ? "From: " + val : "Enter your name";
-});
-
-// GENERATE LINK
-function makeLink(){
-  const n = document.getElementById("nameInput").value.trim();
-  if(!n) return;
-  const link = location.origin + location.pathname +
-    "?n=" + encodeURIComponent(n.replace(/\s+/g,"-"));
-  alert("Share this link:\n" + link);
+/* Music Auto-start on first click */
+let musicStarted=false;
+function startMusic(){
+if(!musicStarted){
+document.getElementById("bgMusic").play();
+musicStarted=true;
+}
 }
 
-// WHATSAPP SHARE
-function shareWhatsApp(){
-  const name = document.getElementById("nameInput").value.trim() || "Tahir";
-  const text = `Happy Quaid-e-Azam Day 🇵🇰\nFrom: ${name}\n` + location.href;
-  window.open("https://wa.me/?text=" + encodeURIComponent(text));
-}
-
-// FLOWERS
-const flowers = ["🌸","🌼","🌺","🌷","💮"];
-for(let i=0;i<50;i++){
-  let f = document.createElement("div");
-  f.className="flower";
-  f.innerText = flowers[Math.floor(Math.random()*flowers.length)];
-  f.style.left = Math.random()*100 + "vw";
-  f.style.animationDuration = (5 + Math.random()*5) + "s";
-  f.style.fontSize = (18 + Math.random()*14) + "px";
-  document.body.appendChild(f);
-}
-
-// DECORATIVE ELEMENTS
-const decors = ["💖","✨","🌟","❤️"];
-for(let i=0;i<30;i++){
-  let d = document.createElement("div");
-  d.className="decor";
-  d.innerText = decors[Math.floor(Math.random()*decors.length)];
-  d.style.left = Math.random()*100 + "vw";
-  d.style.animationDuration = (8 + Math.random()*6) + "s";
-  document.body.appendChild(d);
-}
-
-// FIREWORKS
-function createFirework(){
-  const count = Math.floor(Math.random()*15)+8;
-  for(let i=0;i<count;i++){
-    let fw = document.createElement("div");
-    fw.className="firework";
-    fw.style.left = Math.random()*100 + "vw";
-    fw.style.top = Math.random()*50 + "vh";
-    fw.style.background = ["red","yellow","white","green","orange","purple","#ff69b4"][Math.floor(Math.random()*7)];
-    document.body.appendChild(fw);
-    setTimeout(()=>fw.remove(),1200);
-  }
-}
-setInterval(createFirework,400);
-
-// MUSIC TOGGLE
-const music = document.getElementById("bgMusic");
-music.volume = 0.5;
-function toggleAudio(){
-  if(music.paused){music.play();}
-  else{music.pause();}
+/* Toggle music button */
+function toggleMusic(){
+let m=document.getElementById("bgMusic");
+if(m.paused){ m.play(); } else { m.pause(); }
 }
 </script>
+
+<div class="container">
+<div class="flag"></div>
+
+<h1>Quaid-e-Azam Day</h1>
+<h2>Born: 25 December 1876</h2>
+
+<div class="divider"></div>
+
+<p>
+<span class="highlight">Quaid-e-Azam Muhammad Ali Jinnah</span> was the
+<span class="highlight">Founder of Pakistan</span>.
+His visionary leadership, constitutional struggle and unwavering determination
+made the creation of Pakistan possible.
+</p>
+
+<p>
+He believed in the principles of
+<span class="highlight">Faith, Unity and Discipline</span>.
+Quaid-e-Azam dedicated his life to justice, equality and the rule of law.
+</p>
+
+<p>
+Today, the nation proudly remembers him as a symbol of courage,
+integrity, and greatness whose legacy continues to guide Pakistan.
+</p>
+
+<button class="music-btn" onclick="toggleMusic()">🎵 Music ON / OFF</button>
+
+<div class="divider"></div>
+
+<footer>
+Developed by <span>Tahir Akbar</span><br>
+Tribute to Quaid-e-Azam Muhammad Ali Jinnah
+</footer>
+</div>
 
 </body>
 </html>
